@@ -1,7 +1,7 @@
 """Flask-DbShell-------------
 Django-like dbshell
 """
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 setup(
@@ -13,17 +13,17 @@ setup(
     author_email='ffeast@gmail.com',
     description='Django-like dbshell',
     long_description=__doc__,
-    py_modules=['flask_sqlite3'],
-    # if you would be using a package instead use packages instead
-    # of py_modules:
-    # packages=['flask_sqlite3'],
     zip_safe=False,
+    packages=find_packages(),
     include_package_data=True,
     platforms='any',
     install_requires=[
         'Flask',
-        'mock'
     ],
+    tests_require=[
+        'mock>=1.0.1'
+    ],
+    test_suite='tests',
     classifiers=[
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
