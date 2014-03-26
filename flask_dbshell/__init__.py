@@ -15,7 +15,7 @@ class DbShell(object):
 
 class DbUrl(object):
 
-    u"""Db url parser
+    """Db url parser
 
     URL can be specified as a single string,
     like mysql://user:password@host:port/dbname?arg=100
@@ -24,8 +24,6 @@ class DbUrl(object):
     These modes are compatible, so that use can pass both url
     and override some of its parts with explicit arguments.
     I.e, DbUrl(url='mysql://user@host:port/dbname?arg=100', password='123')
-
-    TODO: dialects
     """
 
     _KNOWN_PARTS = ('backend', 'host', 'port',

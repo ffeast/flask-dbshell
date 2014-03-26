@@ -2,6 +2,16 @@ import subprocess
 
 
 def load_backend(dburl):
+
+    """Backend loader
+
+    Getting a specified backend name and trying
+    to dynamically load the corresponding module.
+
+    To support a new db just create a newdb.py
+    containing a "NewdbBackend" class that overrides "compile_command" method
+    """
+
     if dburl.backend is None:
         raise ValueError('database backend is not specified')
     module_name = dburl.backend
